@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="FlightSimulator.views.wheel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulator" 
+             xmlns:control="clr-namespace:FlightSimulator.views"
+             mc:Ignorable="d" Height="425" Width="472" Background="AliceBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="20" Text="rudder:" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Margin="14.333,304.333,119,-0.667"/>
+        <TextBlock FontSize="20" Text="{Binding VM_rudder,StringFormat=N3}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Margin="101.333,304.333,32,-0.667"/>
+        <TextBlock FontSize="20" Text="elevaor:" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Margin="269.333,49.333,-112,218.333" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock FontSize="20" Text="{Binding VM_elevator,StringFormat=N3}" Grid.Column="1" Grid.ColumnSpan="1" Margin="269.333,27,-112,311.333" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <Viewbox Margin = "41,17,18,2.333" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <control:Joystick x:Name="Joystick1" Margin = "-13,13,92,58.333" Grid.ColumnSpan="2" Grid.RowSpan="2" Height="375" Width="402" RenderTransformOrigin="0.5,0.5">
+                <control:Joystick.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.451"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="1.374"/>
+                    </TransformGroup>
+                </control:Joystick.RenderTransform>
+            </control:Joystick>
+        </Viewbox>
+
+        <TextBlock Text="{Binding VM_throttle,StringFormat=N3}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1" Margin="80,0,0,0"/>
+        <TextBlock Text="throttle:" FontSize="20" Grid.Column="1" Grid.Row="0" Margin="0,0,0,0"/>
+        <StackPanel Name="throttle" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Margin="50,0,50,0" Height="27">
+            <Slider Name="throttleSlider1" Maximum="1" Minimum="0" TickFrequency="0.1" ValueChanged="ab"/>
+        </StackPanel>
+
+        <TextBlock Text="{Binding VM_Aileron,StringFormat=N3}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Margin="0,50,0,0"/>
+        <TextBlock Text="aileron:" FontSize="20" Grid.Column="0" Grid.Row="1" Margin="0,0,0,0"/>
+        <StackPanel VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Margin="-110,172.333,283,155.333" Height="27" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Slider x:Name="aileronSlider" Maximum="1" Minimum="-1" TickFrequency="0.1" ValueChanged="aa" Margin="50,0,30,0"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
+

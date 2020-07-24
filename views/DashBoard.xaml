@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="FlightSimulator.views.DashBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulator.views"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="200" Background="AliceBlue">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Dashboard" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="70,0,0,0"/>
+        <TextBlock Text="heading:" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+        <TextBlock Text="{Binding VM_Heading, StringFormat=N3}" Grid.Column="1" Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="1"/>
+        <TextBlock Text="vertical speed:" Grid.Column="0" Grid.Row="2" Margin="0,0,0,0" Grid.ColumnSpan="1"/>
+        <TextBlock Text="{Binding VM_VerticalSpeed ,StringFormat=N3}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+        <TextBlock Text="ground speed:" Grid.Column="0" Grid.Row="3" Margin="0,0,0,0" Grid.ColumnSpan="1"/>
+        <TextBlock Text= "{Binding VM_GroundSpeed,StringFormat=N3}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+        <TextBlock Text="air speed:" Grid.Column="0" Grid.Row="4" Margin="0,0,0,0" Grid.ColumnSpan="1"/>
+        <TextBlock Text="{Binding VM_AirSpeed,StringFormat=N3}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+        <TextBlock Text="altitude:" Grid.Column="0" Grid.Row="5" Margin="0,0,0,0" Grid.ColumnSpan="1"/>
+        <TextBlock Text="{Binding VM_Altitude,StringFormat=N3}" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+        <TextBlock Text="roll:" Grid.Column="0" Grid.Row="6" Margin="0,0,0,0" Grid.ColumnSpan="1"/>
+        <TextBlock Text="{Binding VM_Roll,StringFormat=N3}" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+        <TextBlock Text="pitch:" Grid.Column="0" Grid.Row="7" Margin="0,0,0,0" Grid.ColumnSpan="1"/>
+        <TextBlock Text="{Binding VM_Pitch,StringFormat=N3}" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+        <TextBlock Text="altimeter:" Grid.Column="0" Grid.Row="8" Margin="0,0,0,0" Grid.ColumnSpan="1"/>
+        <TextBlock Text="{Binding VM_Altimeter,StringFormat=N3}" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+
+    </Grid>
+</UserControl>
+

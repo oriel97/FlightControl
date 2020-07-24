@@ -1,0 +1,31 @@
+﻿<Window x:Class="FlightSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:control="clr-namespace:FlightSimulator.views"
+        Title="Flight Simulator Desktop" Height="500" Width="900" >
+
+    <Grid x:Name="LayoutRoot" Background="White" Margin="0,10,0,-10">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="0*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <control:Map Margin = "0,117,0.333,-0.333" Grid.Column= "0" Grid.RowSpan= "4" />
+        <control:DashBoard x:Name="DashBoard1" Grid.Row= "0" Grid.Column= "1" Grid.RowSpan= "3" Margin= "0.667,0,0.333,115.333" />
+        <Viewbox Grid.Row= "0" Grid.Column= "0" Margin= "0,0,0,0" Grid.RowSpan= "1" >
+            <control:Connection x:Name="Connectetion1" Width = "783" Height="156" />
+        </Viewbox >
+        <Viewbox Grid.Row="2" Grid.Column= "1" Margin= "0,0,0,0" Grid.RowSpan= "2" Grid.ColumnSpan= "2" >
+            <control:wheel x:Name="wheel1" Height="427" Width="549"/>
+        </Viewbox>
+    </Grid>
+</Window>
